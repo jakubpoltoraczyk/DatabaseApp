@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>srcgui/configuration/ColorConstants.qml</file>
+        <file>srcgui/configuration/qmldir</file>
+        <file>srcgui/configuration/ApplicationWindowConstants.qml</file>
+        <file>srcgui/mainpage/MainPage.qml</file>
+        <file>srcgui/clientserviceview/ClientServiceView.qml</file>
+        <file>srcgui/clientserviceview/ClientIdentities.qml</file>
+        <file>srcgui/configuration/ClientServiceViewConstants.qml</file>
+        <file>srcgui/inputcomponent/InputComponent.qml</file>
+        <file>srcgui/rectanglesolidborder/RectangleSolidBorder.qml</file>
+        <file>srcgui/configuration/SharedConstants.qml</file>
+        <file>srcgui/configuration/InputComponentConstants.qml</file>
+        <file>srcgui/custombutton/CustomButton.qml</file>
+        <file>srcgui/configuration/CustomButtonConstants.qml</file>
+        <file>srcgui/clientserviceview/OrderDataset.qml</file>
+    </qresource>
+</RCC>
