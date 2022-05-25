@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../srcgui/clientserviceview/clientserviceviewcontroller.h"
+#include "../../srcgui/windowmanager/windowmanager.h"
 #include "../databaseclient/databaseclient.h"
 
 #include <QObject>
@@ -24,6 +25,7 @@ public:
 
 private:
   std::shared_ptr<DataBaseClient> dataBaseClient;
+  std::shared_ptr<WindowManager> windowManager;
 
   ClientServiceViewController clientServiceViewController;
 };

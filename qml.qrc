@@ -15,5 +15,7 @@
         <file>srcgui/custombutton/CustomButton.qml</file>
         <file>srcgui/configuration/CustomButtonConstants.qml</file>
         <file>srcgui/clientserviceview/OrderDataset.qml</file>
+        <file>srcgui/windowmanager/ClientIdentitiesWindow.qml</file>
+        <file>srcgui/configuration/ClientIdentitiesWindowConstants.qml</file>
     </qresource>
 </RCC>

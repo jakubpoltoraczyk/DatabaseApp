@@ -1,5 +1,5 @@
 pragma Singleton
-import QtQuick 2.15
+import QtQuick 2.12
 
 QtObject {
     /** White color used in application */

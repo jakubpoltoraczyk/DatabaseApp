@@ -1,5 +1,5 @@
 pragma Singleton
-import QtQuick 2.15
+import QtQuick 2.12
 
 QtObject {
     /** Default width of border used in application components */

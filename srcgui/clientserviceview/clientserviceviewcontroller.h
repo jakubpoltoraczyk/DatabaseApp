@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../srcback/databaseclient/databaseclient.h"
+#include "../windowmanager/windowmanager.h"
 
 #include <QObject>
 
@@ -22,8 +23,10 @@ public:
   /**
    * @brief Create a new instance of client service view controller
    * @param newDataBaseClient DataBaseClient object to communicate with database
+   * @param newWindowManager WindowManager object to control existing application windows
    */
-  ClientServiceViewController(std::shared_ptr<DataBaseClient> newDataBaseClient);
+  ClientServiceViewController(std::shared_ptr<DataBaseClient> newDataBaseClient,
+                              std::shared_ptr<WindowManager> newWindowManager);
 
 public slots:
   /** Called when register button has been just released */
@@ -49,4 +52,5 @@ private:
   QString price;
 
   std::shared_ptr<DataBaseClient> dataBaseClient;
+  std::shared_ptr<WindowManager> windowManager;
 };

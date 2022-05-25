@@ -3,10 +3,13 @@
 #include "../../srcback/models.h"
 
 ClientServiceViewController::ClientServiceViewController(
-    std::shared_ptr<DataBaseClient> newDataBaseClient)
-    : dataBaseClient(newDataBaseClient) {}
+    std::shared_ptr<DataBaseClient> newDataBaseClient,
+    std::shared_ptr<WindowManager> newWindowManager)
+    : dataBaseClient(newDataBaseClient), windowManager(newWindowManager) {}
 
-void ClientServiceViewController::onRegisterButtonReleased() {}
+void ClientServiceViewController::onRegisterButtonReleased() {
+  windowManager->setClientIdentitiesWindowVisibility(true);
+}
 
 void ClientServiceViewController::onMakeOrderButtonReleased() {
   emit collectDataFromGUI();
