@@ -12,12 +12,12 @@ Item {
 
     /** Collect data from each input component */
     function collectData() {
-        clientServiceViewController.orderID = orderIdInputComponent.contentFieldText
-        clientServiceViewController.licenseNumber = licenseNumberInputComponent.contentFieldText
-        clientServiceViewController.variantID = variantIDInputComponent.contentFieldText
-        clientServiceViewController.orderDate = orderDateInputComponent.contentFieldText
-        clientServiceViewController.receptionDate = receptionDateInputComponent.contentFieldText
-        clientServiceViewController.price = priceInputComponent.contentFieldText
+        clientServiceViewController.orderID = inputComponentRepeater.itemAt(0).contentFieldText
+        clientServiceViewController.licenseNumber = inputComponentRepeater.itemAt(1).contentFieldText
+        clientServiceViewController.variantID = inputComponentRepeater.itemAt(2).contentFieldText
+        clientServiceViewController.orderDate = inputComponentRepeater.itemAt(3).contentFieldText
+        clientServiceViewController.receptionDate = inputComponentRepeater.itemAt(4).contentFieldText
+        clientServiceViewController.price = inputComponentRepeater.itemAt(5).contentFieldText
     }
 
     /** Called when component has been just created */
@@ -34,40 +34,14 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         topPadding: 60
 
-        InputComponent {
-            id: orderIdInputComponent
-            labelText: "Order ID:"
-            placeholderFieldText: "10221345"
-        }
+        Repeater {
+            id: inputComponentRepeater
+            model: 6
 
-        InputComponent {
-            id: licenseNumberInputComponent
-            labelText: "License number:"
-            placeholderFieldText: "A452R"
-        }
-
-        InputComponent {
-            id: variantIDInputComponent
-            labelText: "Variant ID:"
-            placeholderFieldText: "149928"
-        }
-
-        InputComponent {
-            id: orderDateInputComponent
-            labelText: "Order date:"
-            placeholderFieldText: "21.06.2022"
-        }
-
-        InputComponent {
-            id: receptionDateInputComponent
-            labelText: "Reception date:"
-            placeholderFieldText: "30.06.2022"
-        }
-
-        InputComponent {
-            id: priceInputComponent
-            labelText: "Price:"
-            placeholderFieldText: "1857"
+            InputComponent {
+                labelText: ClientServiceViewConstants.orderDatasetTextLabelArray[index]
+                placeholderFieldText: ClientServiceViewConstants.orderDatasetPlaceholderArray[index]
+            }
         }
     }
 
@@ -85,12 +59,9 @@ Item {
 
             /** Called when button has been released */
             onReleased: {
-                orderIdInputComponent.clearContent()
-                licenseNumberInputComponent.clearContent()
-                variantIDInputComponent.clearContent()
-                orderDateInputComponent.clearContent()
-                receptionDateInputComponent.clearContent()
-                priceInputComponent.clearContent()
+                for(let i = 0; i < inputComponentRepeater.count; ++i) {
+                    inputComponentRepeater.itemAt(i).clearContent();
+                }
             }
         }
 

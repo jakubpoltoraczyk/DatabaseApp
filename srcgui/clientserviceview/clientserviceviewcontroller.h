@@ -36,8 +36,11 @@ public slots:
   void onMakeOrderButtonReleased();
 
 signals:
-  /** Emiited when order has been accepted */
-  void collectDataFromGUI();
+  /** Emiited when data from client identities should be updated in C++ part of application */
+  void collectDataFromClientIdentitiesComponent();
+
+  /** Emitted when data from order dataset should be updated in C++ part of application */
+  void collectDataFromOrderDatasetComponent();
 
 private:
   QString firstName;

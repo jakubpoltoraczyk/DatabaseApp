@@ -12,10 +12,10 @@ Item {
 
     /** Collect data from each input component */
     function collectData() {
-        clientServiceViewController.firstName = firstNameInputComponent.contentFieldText
-        clientServiceViewController.lastName = lastNameInputComponent.contentFieldText
-        clientServiceViewController.pesel = peselInputComponent.contentFieldText
-        clientServiceViewController.phoneNumber = phoneNumberInputComponent.contentFieldText
+        clientServiceViewController.firstName = inputComponentRepeater.itemAt(0).contentFieldText
+        clientServiceViewController.lastName = inputComponentRepeater.itemAt(1).contentFieldText
+        clientServiceViewController.pesel = inputComponentRepeater.itemAt(2).contentFieldText
+        clientServiceViewController.phoneNumber = inputComponentRepeater.itemAt(3).contentFieldText
     }
 
     /** Called when component has been just created */
@@ -32,29 +32,16 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         topPadding: 40
 
-        InputComponent {
-            id: firstNameInputComponent
-            labelText: "First name:"
-            placeholderFieldText: "Jan"
+        Repeater {
+            id: inputComponentRepeater
+            model: 4
+
+            InputComponent {
+                labelText: ClientServiceViewConstants.clientIdentitiesTextLabelArray[index]
+                placeholderFieldText: ClientServiceViewConstants.clientIdentitiesPlaceHolderArray[index]
+            }
         }
 
-        InputComponent {
-            id: lastNameInputComponent
-            labelText: "Last name:"
-            placeholderFieldText: "Kowalski"
-        }
-
-        InputComponent {
-            id: peselInputComponent
-            labelText: "PESEL:"
-            placeholderFieldText: "15310528737"
-        }
-
-        InputComponent {
-            id: phoneNumberInputComponent
-            labelText: "Phone number:"
-            placeholderFieldText: "024335668"
-        }
     }
 
     Row {
@@ -71,10 +58,9 @@ Item {
 
             /** Called when button has been released */
             onReleased: {
-                firstNameInputComponent.clearContent()
-                lastNameInputComponent.clearContent()
-                peselInputComponent.clearContent()
-                phoneNumberInputComponent.clearContent()
+                for(let i = 0; i < inputComponentRepeater.count; ++i) {
+                    inputComponentRepeater.itemAt(i).clearContent();
+                }
             }
         }
 

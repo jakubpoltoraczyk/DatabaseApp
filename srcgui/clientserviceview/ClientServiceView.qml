@@ -10,8 +10,11 @@ Rectangle {
     Connections {
         target: clientServiceViewController
 
-        function onCollectDataFromGUI() {
+        function onCollectDataFromClientIdentitiesComponent() {
             clientIdentities.collectData()
+        }
+
+        function onCollectDataFromOrderDatasetComponent() {
             orderDataset.collectData()
         }
     }

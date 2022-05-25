@@ -8,11 +8,14 @@ ClientServiceViewController::ClientServiceViewController(
     : dataBaseClient(newDataBaseClient), windowManager(newWindowManager) {}
 
 void ClientServiceViewController::onRegisterButtonReleased() {
+  emit collectDataFromClientIdentitiesComponent();
   windowManager->setClientIdentitiesWindowVisibility(true);
+  emit windowManager->completeClientIdentitiesWindowData(firstName, lastName, pesel, phoneNumber);
 }
 
 void ClientServiceViewController::onMakeOrderButtonReleased() {
-  emit collectDataFromGUI();
+  emit collectDataFromClientIdentitiesComponent();
+  emit collectDataFromOrderDatasetComponent();
   auto model = Models::OrderModel{orderID.toStdString(),       pesel.toStdString(),
                                   licenseNumber.toStdString(), variantID.toStdString(),
                                   orderDate.toStdString(),     receptionDate.toStdString(),

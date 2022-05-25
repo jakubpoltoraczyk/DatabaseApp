@@ -16,4 +16,16 @@ struct OrderModel {
   std::string price;
 };
 
+struct UserModel {
+  std::string firstName;
+  std::string lastName;
+  std::string pesel;
+  std::string phoneNumber;
+  std::string mailAdress;
+  std::string city;
+  std::string postalCode;
+  std::string street;
+  std::string houseNumber;
+};
+
 } // namespace Models

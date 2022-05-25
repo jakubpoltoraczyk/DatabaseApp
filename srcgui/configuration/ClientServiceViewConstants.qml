@@ -16,4 +16,18 @@ QtObject {
 
     /** Default column spacing between components in client service view */
     readonly property int columnSpacing: 50
+
+    /** Contains text for text labels in client identities component */
+    readonly property var clientIdentitiesTextLabelArray: ["First name:", "Lase name:", "Pesel:", "Phone number:"]
+
+    /** Contains text for placeholders in client identities component */
+    readonly property var clientIdentitiesPlaceHolderArray: ["Jan", "Kowalski", "15310528737", "024335668"]
+
+    /** Contains text for text labels in order dataset component */
+    readonly property var orderDatasetTextLabelArray:
+        ["Order ID:", "License number:", "Variant ID:", "Order date:", "Reception date:", "Price:"]
+
+    /** Contains text for placeholders in order dataset component */
+    readonly property var orderDatasetPlaceholderArray:
+        ["10221345", "A452R", "149928", "21.06.2022", "30.06.2022", "1857"]
 }

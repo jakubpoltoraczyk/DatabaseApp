@@ -3,6 +3,7 @@ import QtQuick.Window 2.12
 
 import "../configuration"
 import "../inputcomponent"
+import "../custombutton"
 
 Window {
     id: clientIdentitiesWindow
@@ -12,6 +13,31 @@ Window {
     height: ClientIdentitiesWindowConstants.defaultHeight
     flags: Qt.Window | Qt.FramelessWindowHint
 
+    signal registerUserConfirmed(var userData)
+
+    function collectData() {
+        let userData = []
+        for(let i = 0; i < inputComponentRepeater.count; ++i) {
+            userData[i] = inputComponentRepeater.itemAt(i).contentFieldText
+        }
+        registerUserConfirmed(userData)
+    }
+
+    Component.onCompleted: {
+        registerUserConfirmed.connect(windowManager.onRegisterUserConfirmed)
+    }
+
+    Connections {
+        target: windowManager
+
+        function onCompleteClientIdentitiesWindowData(firstName, lastName, pesel, phoneNumber) {
+            inputComponentRepeater.itemAt(0).contentFieldText = firstName
+            inputComponentRepeater.itemAt(1).contentFieldText = lastName
+            inputComponentRepeater.itemAt(2).contentFieldText = pesel
+            inputComponentRepeater.itemAt(3).contentFieldText = phoneNumber
+        }
+    }
+
     Rectangle {
         id: mainRectangle
         anchors.fill: parent
@@ -19,16 +45,31 @@ Window {
 
         Column {
             id: inputComponentColumn
-            spacing: 5
+            spacing: 6
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            topPadding: 50
 
             Repeater {
                 id: inputComponentRepeater
                 model: 9
 
                 InputComponent {
-                    labelText: "Some label:"
-                    placeholderFieldText: "placeholder"
+                    labelText: ClientIdentitiesWindowConstants.textLabelArray[index]
+                    placeholderFieldText: ClientIdentitiesWindowConstants.placeholderArray[index]
                 }
+            }
+        }
+
+        CustomButton {
+            id: confirmButton
+            text: "Confirm"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 60
+
+            onReleased: {
+                collectData()
             }
         }
     }
