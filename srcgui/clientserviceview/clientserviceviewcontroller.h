@@ -1,21 +1,29 @@
 #pragma once
 
+#include "../../srcback/databaseclient/databaseclient.h"
+
 #include <QObject>
+
+#include <memory>
 
 class ClientServiceViewController : public QObject {
   Q_OBJECT
-  Q_PROPERTY(QString firstName WRITE setFirstName)
-  Q_PROPERTY(QString lastName WRITE setLastName)
-  Q_PROPERTY(QString pesel WRITE setPesel)
-  Q_PROPERTY(QString phoneNumber WRITE setPhoneNumber)
-  Q_PROPERTY(QString orderID WRITE setOrderID)
-  Q_PROPERTY(QString licenseNumber WRITE setLicenseNumber)
-  Q_PROPERTY(QString variantID WRITE setVariantID)
-  Q_PROPERTY(QString orderDate WRITE setOrderDate)
-  Q_PROPERTY(QString receptionDate WRITE setReceptionDate)
-  Q_PROPERTY(QString price WRITE setPrice)
+  Q_PROPERTY(QString firstName MEMBER firstName)
+  Q_PROPERTY(QString lastName MEMBER lastName)
+  Q_PROPERTY(QString pesel MEMBER pesel)
+  Q_PROPERTY(QString phoneNumber MEMBER phoneNumber)
+  Q_PROPERTY(QString orderID MEMBER orderID)
+  Q_PROPERTY(QString licenseNumber MEMBER licenseNumber)
+  Q_PROPERTY(QString variantID MEMBER variantID)
+  Q_PROPERTY(QString orderDate MEMBER orderDate)
+  Q_PROPERTY(QString receptionDate MEMBER receptionDate)
+  Q_PROPERTY(QString price MEMBER price)
 public:
-  using QObject::QObject;
+  /**
+   * @brief Create a new instance of client service view controller
+   * @param newDataBaseClient DataBaseClient object to communicate with database
+   */
+  ClientServiceViewController(std::shared_ptr<DataBaseClient> newDataBaseClient);
 
 public slots:
   /** Called when register button has been just released */
@@ -29,33 +37,16 @@ signals:
   void collectDataFromGUI();
 
 private:
-  void setFirstName(const QString& newFirstName) { firstName = newFirstName; }
   QString firstName;
-
-  void setLastName(const QString& newLastName) { lastName = newLastName; }
   QString lastName;
-
-  void setPesel(const QString& newPesel) { pesel = newPesel; }
   QString pesel;
-
-  void setPhoneNumber(const QString& newPhoneNumber) { phoneNumber = newPhoneNumber; }
   QString phoneNumber;
-
-  void setOrderID(const QString& newOrderID) { orderID = newOrderID; }
   QString orderID;
-
-  void setLicenseNumber(const QString newLicenseNumber) { licenseNumber = newLicenseNumber; }
   QString licenseNumber;
-
-  void setVariantID(const QString& newVariantID) { variantID = newVariantID; }
   QString variantID;
-
-  void setOrderDate(const QString newOrderDate) { orderDate = newOrderDate; }
   QString orderDate;
-
-  void setReceptionDate(const QString newReceptionDate) { receptionDate = newReceptionDate; }
   QString receptionDate;
-
-  void setPrice(const QString& newPrice) { price = newPrice; }
   QString price;
+
+  std::shared_ptr<DataBaseClient> dataBaseClient;
 };

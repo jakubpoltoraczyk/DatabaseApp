@@ -13,7 +13,7 @@ struct OrderModel {
   std::string variantID;
   std::string orderDate;
   std::string receptionDate;
-  int price;
+  std::string price;
 };
 
 } // namespace Models
