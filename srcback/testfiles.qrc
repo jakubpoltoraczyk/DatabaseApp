@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/TEST">
         <file>testfiles/clients.json</file>
+        <file>testfiles/orders.json</file>
     </qresource>
 </RCC>

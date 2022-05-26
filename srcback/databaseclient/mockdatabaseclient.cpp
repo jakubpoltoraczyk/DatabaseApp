@@ -29,15 +29,28 @@ DataBaseClient::LoginCredentials MockDataBaseClient::requestLogin(const std::str
   return loginCredentials;
 }
 
-void MockDataBaseClient::requestLogout() {
-  std::cout << __PRETTY_FUNCTION__ << std::endl;
-}
+void MockDataBaseClient::requestLogout() { std::cout << __PRETTY_FUNCTION__ << std::endl; }
 
 void MockDataBaseClient::createOrder(Models::OrderModel model) {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
   std::cout << "OrderModel: {" << model.pesel << ", " << model.orderID << ", "
             << model.licenseNumber << ", " << model.variantID << ", " << model.orderDate << ", "
             << model.receptionDate << ", " << model.price << "}" << std::endl;
+}
+
+void MockDataBaseClient::deleteOrder(const std::string& orderID) {
+  std::cout << __PRETTY_FUNCTION__ << std::endl;
+  std::cout << "Order ID: " << orderID << std::endl;
+}
+
+void MockDataBaseClient::completeOrder(const std::string& orderID) {
+  std::cout << __PRETTY_FUNCTION__ << std::endl;
+  std::cout << "Order ID: " << orderID << std::endl;
+}
+
+QJsonDocument MockDataBaseClient::readOrders() {
+  std::cout << __PRETTY_FUNCTION__ << std::endl;
+  return openJson(":/TEST/testfiles/orders.json");
 }
 
 void MockDataBaseClient::createClient(Models::UserModel model) {

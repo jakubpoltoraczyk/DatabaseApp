@@ -3,6 +3,7 @@
 #include "../../srcgui/clientmanagementview/clientmanagementviewcontroller.h"
 #include "../../srcgui/clientserviceview/clientserviceviewcontroller.h"
 #include "../../srcgui/custommessagedialog/custommessagedialogcontroller.h"
+#include "../../srcgui/ordermanagementview/ordermanagementviewcontroller.h"
 #include "../../srcgui/windowmanager/windowmanager.h"
 #include "../databaseclient/databaseclient.h"
 
@@ -38,4 +39,5 @@ private:
 
   ClientServiceViewController clientServiceViewController;
   ClientManagementViewController clientManagementViewController;
+  OrderManagementViewController orderManagementViewController;
 };

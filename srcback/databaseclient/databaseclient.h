@@ -27,6 +27,24 @@ public:
   virtual void createOrder(Models::OrderModel model) = 0;
 
   /**
+   * @brief Delete order with specified ID
+   * @param Order ID which will be deleted
+   */
+  virtual void deleteOrder(const std::string& orderID) = 0;
+
+  /**
+   * @brief Complete order with specified ID
+   * @param Order ID which will be marked as completed
+   */
+  virtual void completeOrder(const std::string& orderID) = 0;
+
+  /**
+   * @brief Provide a document with available orders
+   * @return JSON document of available orders
+   */
+  virtual QJsonDocument readOrders() = 0;
+
+  /**
    * @brief Create user using specified data model
    * @param model Data model related to user which will be created
    */

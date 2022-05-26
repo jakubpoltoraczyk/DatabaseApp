@@ -22,6 +22,24 @@ public:
   void createOrder(Models::OrderModel model) override;
 
   /**
+   * @brief Delete order with specified ID
+   * @param Order ID which will be deleted
+   */
+  void deleteOrder(const std::string& orderID) override;
+
+  /**
+   * @brief Complete order with specified ID
+   * @param Order ID which will be marked as completed
+   */
+  void completeOrder(const std::string& orderID) override;
+
+  /**
+   * @brief Provide a document with available orders
+   * @return JSON document of available orders
+   */
+  QJsonDocument readOrders() override;
+
+  /**
    * @brief createClient Create user using specified data model
    * @param model Data model related to user which will be created
    */

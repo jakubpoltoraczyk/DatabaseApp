@@ -8,6 +8,9 @@ ScrollView {
     height: 200
     topPadding: 20
     bottomPadding: 20
+    background: Rectangle {
+        color: ColorConstants.extraLightGrey
+    }
 
     readonly property int maxNumberOfClients: 25
 

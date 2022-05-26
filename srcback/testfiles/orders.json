@@ -1,0 +1,66 @@
+[
+    {
+        "orderID": "233423",
+        "licenseNumber": "AR84209",
+        "variantID": "542321",
+        "orderDate": "12.06.2022",
+        "receptionDate": "14.06.2022",
+        "price": "950"
+    },
+    {
+        "orderID": "236665",
+        "licenseNumber": "AP09209",
+        "variantID": "923231",
+        "orderDate": "14.06.2022",
+        "receptionDate": "20.06.2022",
+        "price": "1950"
+    },
+    {
+        "orderID": "199203",
+        "licenseNumber": "KLA6RTW",
+        "variantID": "932321",
+        "orderDate": "10.06.2022",
+        "receptionDate": "12.06.2022",
+        "price": "850"
+    },
+    {
+        "orderID": "298321",
+        "licenseNumber": "APRE566",
+        "variantID": "122219",
+        "orderDate": "21.06.2022",
+        "receptionDate": "24.06.2022",
+        "price": "1050"
+    },
+    {
+        "orderID": "300021",
+        "licenseNumber": "PG56S43",
+        "variantID": "9222910",
+        "orderDate": "15.06.2022",
+        "receptionDate": "16.06.2022",
+        "price": "300"
+    },
+    {
+        "orderID": "295666",
+        "licenseNumber": "A2137RK",
+        "variantID": "432323",
+        "orderDate": "19.06.2022",
+        "receptionDate": "26.06.2022",
+        "price": "2950"
+    },
+    {
+        "orderID": "938329",
+        "licenseNumber": "A324239",
+        "variantID": "543232",
+        "orderDate": "12.06.2022",
+        "receptionDate": "15.06.2022",
+        "price": "1100"
+    },
+    {
+        "orderID": "232112",
+        "licenseNumber": "TY22209",
+        "variantID": "123225",
+        "orderDate": "17.06.2022",
+        "receptionDate": "20.06.2022",
+        "price": "1650"
+    }
+]

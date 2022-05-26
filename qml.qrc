@@ -22,5 +22,7 @@
         <file>srcgui/windowmanager/LoginWindow.qml</file>
         <file>srcgui/custommessagedialog/CustomMessageDialog.qml</file>
         <file>srcgui/applicationauthorsview/ApplicationAuthorsView.qml</file>
+        <file>srcgui/ordermanagementview/OrderManagementView.qml</file>
+        <file>srcgui/ordermanagementview/Order.qml</file>
     </qresource>
 </RCC>

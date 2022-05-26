@@ -9,6 +9,7 @@ Rectangle {
     id: clientRow
     height: 100
     width: ApplicationWindowConstants.defaultWidth
+    color: ColorConstants.extraLightGrey
 
     property int modelIndex: undefined
 
