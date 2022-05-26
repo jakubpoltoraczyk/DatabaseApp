@@ -19,5 +19,7 @@
         <file>srcgui/configuration/ClientIdentitiesWindowConstants.qml</file>
         <file>srcgui/clientmanagementview/ClientManagementView.qml</file>
         <file>srcgui/clientmanagementview/Client.qml</file>
+        <file>srcgui/windowmanager/LoginWindow.qml</file>
+        <file>srcgui/custommessagedialog/CustomMessageDialog.qml</file>
     </qresource>
 </RCC>

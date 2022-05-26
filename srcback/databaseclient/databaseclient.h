@@ -6,6 +6,17 @@
 
 class DataBaseClient {
 public:
+  /** Contains available login credentials */
+  enum class LoginCredentials { UKNOWN, USER, ADMIN };
+
+  /**
+   * @brief Send a login request
+   * @param login User's login
+   * @param password User's password
+   * @param Selected login credentials in regard to data base answer
+   */
+  virtual LoginCredentials requestLogin(const std::string& login, const std::string& password) = 0;
+
   /**
    * @brief Create order using specified data model
    * @param model Data model related to order which will be created
@@ -22,7 +33,7 @@ public:
    * @brief Delete user with specified pesel number
    * @param pesel Pesel number of user which will be deleted
    */
-  virtual void deleteClient(const std::string &pesel) = 0;
+  virtual void deleteClient(const std::string& pesel) = 0;
 
   /**
    * @brief Update user with specified data model

@@ -5,6 +5,14 @@
 class SQLDataBaseClient : public DataBaseClient {
 public:
   /**
+   * @brief Send a login request
+   * @param login User's login
+   * @param password User's password
+   * @param Selected login credentials in regard to data base answer
+   */
+  LoginCredentials requestLogin(const std::string& login, const std::string& password) override;
+
+  /**
    * @brief Create order using specified data model
    * @param model Data model related to order which will be created
    */

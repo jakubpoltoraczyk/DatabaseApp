@@ -16,6 +16,9 @@ Row {
     /** Content field text of the input component */
     property alias contentFieldText: inputComponentField.text
 
+    /** Contains information if password mode is enabled */
+    property bool isPasswordModeEnabled: false
+
     /** Clear text content of input component field */
     function clearContent() {
         inputComponentField.text = ""
@@ -36,6 +39,7 @@ Row {
         width: InputComponentConstants.inputComponentFieldWidth
         height: InputComponentConstants.inputComponentHeight
         placeholderText: placeholderFieldText
+        echoMode: isPasswordModeEnabled ? TextInput.Password : TextInput.Normal
         background: Rectangle {
             id: inputComponentFieldBackground
             color: ColorConstants.white

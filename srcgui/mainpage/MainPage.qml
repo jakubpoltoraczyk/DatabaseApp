@@ -17,11 +17,27 @@ Page {
 
     header: TabBar {
         id: tabBar
-        width: parent.width
+        currentIndex: 0
+
+        Connections {
+            target: basicController
+
+            function onResetTabView() {
+                tabBar.currentIndex = 0
+            }
+        }
+
+        Connections {
+            target: windowManager
+
+            function onSetApplicationAuthorsButtonState(isEnabled) {
+                tabBarRepeater.itemAt(3).enabled = isEnabled
+            }
+        }
 
         Repeater{
             id: tabBarRepeater
-            model: ["Client service", "Client management", "Order management", "Application authors"]
+            model: ["Client service", "Client management", "Order management", "Application authors", "Logout"]
 
             TabButton {
                 text: modelData
@@ -43,7 +59,15 @@ Page {
         }
 
         ClientManagementView {
+            id: clientManagementView
+        }
 
+        Item {
+            id: orderManagementView
+        }
+
+        Item {
+            id: applicatiobAuthorsView
         }
     }
 }

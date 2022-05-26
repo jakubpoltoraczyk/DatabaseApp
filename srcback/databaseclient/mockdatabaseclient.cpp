@@ -1,8 +1,8 @@
 #include "mockdatabaseclient.h"
 
-#include <iostream>
-
 #include <QFile>
+
+#include <iostream>
 
 namespace {
 QJsonDocument openJson(const QString& pathToJson) {
@@ -12,7 +12,21 @@ QJsonDocument openJson(const QString& pathToJson) {
   file.close();
   return QJsonDocument::fromJson(fileContent);
 }
+
 } // namespace
+
+DataBaseClient::LoginCredentials MockDataBaseClient::requestLogin(const std::string& login,
+                                                                  const std::string& password) {
+  DataBaseClient::LoginCredentials loginCredentials = DataBaseClient::LoginCredentials::UKNOWN;
+
+  if ((login == "user" && password == "user") || (login == "" && password == "")) {
+    loginCredentials = DataBaseClient::LoginCredentials::USER;
+  } else if (login == "admin" && password == "admin") {
+    loginCredentials = DataBaseClient::LoginCredentials::ADMIN;
+  }
+
+  return loginCredentials;
+}
 
 void MockDataBaseClient::createOrder(Models::OrderModel model) {
   std::cout << __PRETTY_FUNCTION__ << std::endl;

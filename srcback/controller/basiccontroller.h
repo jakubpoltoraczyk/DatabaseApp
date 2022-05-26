@@ -2,6 +2,7 @@
 
 #include "../../srcgui/clientmanagementview/clientmanagementviewcontroller.h"
 #include "../../srcgui/clientserviceview/clientserviceviewcontroller.h"
+#include "../../srcgui/custommessagedialog/custommessagedialogcontroller.h"
 #include "../../srcgui/windowmanager/windowmanager.h"
 #include "../databaseclient/databaseclient.h"
 
@@ -27,8 +28,12 @@ public:
 public slots:
   void onTabViewChanged(int index);
 
+signals:
+  void resetTabView();
+
 private:
   std::shared_ptr<DataBaseClient> dataBaseClient;
+  std::shared_ptr<CustomMessageDialogController> customMessageDialogController;
   std::shared_ptr<WindowManager> windowManager;
 
   ClientServiceViewController clientServiceViewController;

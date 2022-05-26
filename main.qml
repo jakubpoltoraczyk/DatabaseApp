@@ -5,6 +5,7 @@ import QtQuick.Controls 2.12
 import "srcgui/configuration"
 import "srcgui/mainpage"
 import "srcgui/windowmanager"
+import "srcgui/custommessagedialog"
 
 Window {
     id: mainApplicationWindow
@@ -12,10 +13,7 @@ Window {
     y: (Screen.height - height) / 2
     width: ApplicationWindowConstants.defaultWidth
     height: ApplicationWindowConstants.defaultHeight
-    minimumWidth: width
-    maximumWidth: width
-    minimumHeight: height
-    maximumHeight: height
+    flags: Qt.Window | Qt.FramelessWindowHint | Qt.WindowStaysOnBottomHint
     color: ColorConstants.lightGrey
     visible: true
 
@@ -26,5 +24,14 @@ Window {
     ClientIdentitiesWindow {
         id: clientIdentitiesWindow
         visible: windowManager.clientIdentitiesWindowVisibility
+    }
+
+    LoginWindow {
+        id: loginWindow
+        visible: windowManager.loginWindowVisibility
+    }
+
+    CustomMessageDialog {
+        id: customMessageDialog
     }
 }

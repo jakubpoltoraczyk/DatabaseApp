@@ -11,6 +11,7 @@ add_executable(${PROJECT_NAME}
   srcback/databaseclient/sqldatabaseclient.cpp
   srcgui/clientmanagementview/clientmanagementviewcontroller.cpp
   srcgui/clientserviceview/clientserviceviewcontroller.cpp
+  srcgui/custommessagedialog/custommessagedialogcontroller.cpp
   srcgui/windowmanager/windowmanager.cpp
 
   srcback/controller/basiccontroller.h
@@ -20,6 +21,7 @@ add_executable(${PROJECT_NAME}
   srcgui/clientmanagementview/clientmanagementviewcontroller.h
   srcgui/clientserviceview/clientserviceviewcontroller.h
   srcgui/clientmanagementview/clientmodel.h
+  srcgui/custommessagedialog/custommessagedialogcontroller.cpp
   srcgui/windowmanager/windowmanager.h
 
   qml.qrc

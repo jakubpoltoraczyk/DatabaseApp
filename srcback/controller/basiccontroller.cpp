@@ -2,19 +2,27 @@
 
 BasicController::BasicController(std::shared_ptr<DataBaseClient> newDataBaseClient)
     : dataBaseClient(newDataBaseClient),
-      windowManager(std::make_shared<WindowManager>(dataBaseClient)),
+      customMessageDialogController(std::make_shared<CustomMessageDialogController>()),
+      windowManager(std::make_shared<WindowManager>(dataBaseClient, customMessageDialogController)),
       clientServiceViewController(dataBaseClient, windowManager),
       clientManagementViewController(dataBaseClient, windowManager) {}
 
 std::vector<std::pair<QString, QObject*>> BasicController::getObjectsToRegister() {
   return {{"basicController", this},
+          {"customMessageDialogController", customMessageDialogController.get()},
           {"clientServiceViewController", &clientServiceViewController},
           {"clientManagementViewController", &clientManagementViewController},
           {"windowManager", windowManager.get()}};
 }
 
 void BasicController::onTabViewChanged(int index) {
-  if (index == 1) {
+  switch (index) {
+  case 1:
     clientManagementViewController.updateView();
+    break;
+  case 4:
+    windowManager->setLoginWindowVisibility(true);
+    emit resetTabView();
+    break;
   }
 }
