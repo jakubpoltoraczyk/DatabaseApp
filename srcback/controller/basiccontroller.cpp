@@ -21,6 +21,7 @@ void BasicController::onTabViewChanged(int index) {
     clientManagementViewController.updateView();
     break;
   case 4:
+    dataBaseClient->requestLogout();
     windowManager->setLoginWindowVisibility(true);
     emit resetTabView();
     break;
