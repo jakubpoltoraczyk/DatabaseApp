@@ -21,7 +21,7 @@ Page {
 
         Repeater{
             id: tabBarRepeater
-            model: ["Client service", "Client management", "ThirdTab", "FourthTab", "FifthTab"]
+            model: ["Client service", "Client management", "Order management", "Application authors"]
 
             TabButton {
                 text: modelData
