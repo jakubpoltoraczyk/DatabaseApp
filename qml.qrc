@@ -21,5 +21,6 @@
         <file>srcgui/clientmanagementview/Client.qml</file>
         <file>srcgui/windowmanager/LoginWindow.qml</file>
         <file>srcgui/custommessagedialog/CustomMessageDialog.qml</file>
+        <file>srcgui/applicationauthorsview/ApplicationAuthorsView.qml</file>
     </qresource>
 </RCC>

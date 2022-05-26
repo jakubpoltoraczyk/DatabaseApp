@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.15
 
 import "../clientserviceview"
 import "../clientmanagementview"
+import "../applicationauthorsview"
 
 Page {
     id: page
@@ -66,8 +67,8 @@ Page {
             id: orderManagementView
         }
 
-        Item {
-            id: applicatiobAuthorsView
+        ApplicationAuthorsView {
+            id: applicationAuthorsView
         }
     }
 }
