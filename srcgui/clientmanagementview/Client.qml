@@ -10,6 +10,8 @@ Rectangle {
     height: 100
     width: ApplicationWindowConstants.defaultWidth
 
+    property int modelIndex: undefined
+
     property string firstName: ""
     property string lastName: ""
     property string pesel: ""
@@ -21,10 +23,11 @@ Rectangle {
     property string houseNumber: ""
 
     signal deleteClient(string clientPesel)
+    signal updateClient(int modelIndex)
 
     Component.onCompleted: {
         deleteClient.connect(clientManagementViewController.onDeleteButtonReleased)
-        updateButton.released.connect(clientManagementViewController.onUpdateButtonReleased)
+        updateClient.connect(clientManagementViewController.onUpdateButtonReleased)
     }
 
     Row {
@@ -65,6 +68,10 @@ Rectangle {
         CustomButton {
             id: updateButton
             text: "Update"
+
+            onReleased: {
+                updateClient(modelIndex)
+            }
         }
     }
 }

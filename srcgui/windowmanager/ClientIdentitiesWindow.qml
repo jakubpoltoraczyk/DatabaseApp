@@ -30,11 +30,10 @@ Window {
     Connections {
         target: windowManager
 
-        function onCompleteClientIdentitiesWindowData(firstName, lastName, pesel, phoneNumber) {
-            inputComponentRepeater.itemAt(0).contentFieldText = firstName
-            inputComponentRepeater.itemAt(1).contentFieldText = lastName
-            inputComponentRepeater.itemAt(2).contentFieldText = pesel
-            inputComponentRepeater.itemAt(3).contentFieldText = phoneNumber
+        function onCompleteClientIdentitiesWindowData(clientData) {
+            for(let i = 0; i < clientData.length; ++i) {
+                inputComponentRepeater.itemAt(i).contentFieldText = clientData[i]
+            }
         }
     }
 

@@ -13,9 +13,9 @@ void WindowManager::onRegisterUserConfirmed(const QStringList& userData) {
       userData.at(6).toStdString(), userData.at(7).toStdString(), userData.at(8).toStdString()};
 
   if (clientIdentitiesWindowMode == ClientIdentitiesWindowMode::CREATE) {
-    dataBaseClient->createUser(std::move(model));
+    dataBaseClient->createClient(std::move(model));
   } else {
-    dataBaseClient->updateUser(std::move(model));
+    dataBaseClient->updateClient(std::move(model));
   }
 }
 

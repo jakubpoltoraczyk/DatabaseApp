@@ -23,6 +23,7 @@ add_executable(${PROJECT_NAME}
   srcgui/windowmanager/windowmanager.h
 
   qml.qrc
+  srcback/testfiles.qrc
 )
 
 target_include_directories(${PROJECT_NAME}

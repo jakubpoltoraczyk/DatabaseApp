@@ -11,20 +11,26 @@ public:
   void createOrder(Models::OrderModel model) override;
 
   /**
-   * @brief createUser Create user using specified data model
+   * @brief createClient Create user using specified data model
    * @param model Data model related to user which will be created
    */
-  void createUser(Models::UserModel model) override;
+  void createClient(Models::UserModel model) override;
 
   /**
    * @brief Delete user with specified pesel number
    * @param pesel Pesel number of user which will be deleted
    */
-  void deleteUser(const std::string& pesel) override;
+  void deleteClient(const std::string& pesel) override;
 
   /**
    * @brief Update user with specified data model
    * @param model Data model which will be used to update user
    */
-  void updateUser(Models::UserModel model) override;
+  void updateClient(Models::UserModel model) override;
+
+  /**
+   * @brief Provide a document with available users
+   * @return JSON document of available users
+   */
+  QJsonDocument readClients() override;
 };

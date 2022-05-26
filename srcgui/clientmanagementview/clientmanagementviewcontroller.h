@@ -19,12 +19,14 @@ public:
 public slots:
   void onDeleteButtonReleased(const QString& clientPesel);
 
-  void onUpdateButtonReleased();
+  void onUpdateButtonReleased(int modelIndex);
 
 signals:
-  void viewChanged(QVariantList newModels);
+  void viewChanged(const QVariantList &newModels);
 
 private:
   std::shared_ptr<DataBaseClient> dataBaseClient;
   std::shared_ptr<WindowManager> windowManager;
+
+  QVariantList clientModels;
 };

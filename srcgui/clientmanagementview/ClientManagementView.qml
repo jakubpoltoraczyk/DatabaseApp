@@ -9,12 +9,17 @@ ScrollView {
     topPadding: 20
     bottomPadding: 20
 
+    readonly property int maxNumberOfClients: 25
+
     ListView {
         id: clientListView
-        model: 25
+        model: maxNumberOfClients
         spacing: 25
         cacheBuffer: (model + 5) * 100
-        delegate: Client {}
+        delegate: Client {
+            modelIndex: index
+            visible: false
+        }
 
         function updateView(newModels) {
             for(let i = 0; i < newModels.length; ++i) {
@@ -27,6 +32,10 @@ ScrollView {
                 clientListView.itemAtIndex(i).postalCode = newModels[i].postalCode
                 clientListView.itemAtIndex(i).street = newModels[i].street
                 clientListView.itemAtIndex(i).houseNumber = newModels[i].houseNumber
+                clientListView.itemAtIndex(i).visible = true
+            }
+            for(let j = newModels.length; j < maxNumberOfClients; ++j) {
+                clientListView.itemAtIndex(j).visible = false
             }
         }
 

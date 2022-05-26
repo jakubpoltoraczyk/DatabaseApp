@@ -10,7 +10,8 @@ ClientServiceViewController::ClientServiceViewController(
 void ClientServiceViewController::onRegisterButtonReleased() {
   emit collectDataFromClientIdentitiesComponent();
   windowManager->setClientIdentitiesWindowVisibility(true);
-  emit windowManager->completeClientIdentitiesWindowData(firstName, lastName, pesel, phoneNumber);
+  emit windowManager->completeClientIdentitiesWindowData(
+      {firstName, lastName, pesel, phoneNumber, "", "", "", "", ""});
 }
 
 void ClientServiceViewController::onMakeOrderButtonReleased() {

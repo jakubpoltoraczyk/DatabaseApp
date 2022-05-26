@@ -2,8 +2,10 @@
 
 void SQLDataBaseClient::createOrder([[maybe_unused]] Models::OrderModel model) {}
 
-void SQLDataBaseClient::createUser([[maybe_unused]] Models::UserModel model) {}
+void SQLDataBaseClient::createClient([[maybe_unused]] Models::UserModel model) {}
 
-void SQLDataBaseClient::deleteUser([[maybe_unused]] const std::string& pesel) {}
+void SQLDataBaseClient::deleteClient([[maybe_unused]] const std::string& pesel) {}
 
-void SQLDataBaseClient::updateUser([[maybe_unused]] Models::UserModel model) {}
+void SQLDataBaseClient::updateClient([[maybe_unused]] Models::UserModel model) {}
+
+QJsonDocument SQLDataBaseClient::readClients() { return QJsonDocument(); }

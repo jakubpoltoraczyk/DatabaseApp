@@ -1,0 +1,79 @@
+[
+    {
+        "firstName": "Jakub",
+        "lastName": "Kowalski",
+        "pesel": "00234560923",
+        "phoneNumber": "999888777",
+        "mailAdress": "jakub@gmail.com",
+        "city": "Poznan",
+        "postalCode": "75-650",
+        "street": "Lipowa",
+        "houseNumber": "22"
+    },
+    {
+        "firstName": "Jan",
+        "lastName": "Szyszka",
+        "pesel": "02234560923",
+        "phoneNumber": "999388327",
+        "mailAdress": "jszyszka@gmail.com",
+        "city": "Poznan",
+        "postalCode": "75-650",
+        "street": "Orzechowa",
+        "houseNumber": "23"
+    },
+    {
+        "firstName": "Martyna",
+        "lastName": "Brzoza",
+        "pesel": "00078990223",
+        "phoneNumber": "554445666",
+        "mailAdress": "brzozamartyna@gmail.com",
+        "city": "Warszawa",
+        "postalCode": "70-350",
+        "street": "Poznańska",
+        "houseNumber": "192"
+    },
+    {
+        "firstName": "Marcin",
+        "lastName": "Brzoza",
+        "pesel": "00034990923",
+        "phoneNumber": "554488777",
+        "mailAdress": "brzoza@gmail.com",
+        "city": "Warszawa",
+        "postalCode": "70-350",
+        "street": "Poznańska",
+        "houseNumber": "192"
+    },
+    {
+        "firstName": "Wiktoria",
+        "lastName": "Olejniczak",
+        "pesel": "00056994323",
+        "phoneNumber": "122488347",
+        "mailAdress": "wikol@gmail.com",
+        "city": "Warszawa",
+        "postalCode": "70-355",
+        "street": "Sejmowa",
+        "houseNumber": "10"
+    },
+    {
+        "firstName": "Kazimierz",
+        "lastName": "Krzyż",
+        "pesel": "00089934223",
+        "phoneNumber": "554432666",
+        "mailAdress": "kaziukrzyz@gmail.com",
+        "city": "Kołobrzeg",
+        "postalCode": "45-223",
+        "street": "Morska",
+        "houseNumber": "19"
+    },
+    {
+        "firstName": "Krzysztof",
+        "lastName": "Puczyński",
+        "pesel": "0098730923",
+        "phoneNumber": "554456999",
+        "mailAdress": "kpucz@gmail.com",
+        "city": "Wrocław",
+        "postalCode": "50-350",
+        "street": "Plac Grunwaldzki",
+        "houseNumber": "22"
+    }
+]

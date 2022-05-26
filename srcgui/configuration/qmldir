@@ -5,4 +5,3 @@ singleton SharedConstants 1.0 SharedConstants.qml
 singleton InputComponentConstants 1.0 InputComponentConstants.qml
 singleton CustomButtonConstants 1.0 CustomButtonConstants.qml
 singleton ClientIdentitiesWindowConstants 1.0 ClientIdentitiesWindowConstants.qml
-singleton ClientManagementViewConstants 1.0 ClientManagementViewConstants.qml
