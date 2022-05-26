@@ -40,13 +40,7 @@ void ClientManagementViewController::updateView() {
 
 void ClientManagementViewController::onDeleteButtonReleased(const QString& clientPesel) {
   dataBaseClient->deleteClient(clientPesel.toStdString());
-
-  QVariantList newModels;
-  for (int i = 0; i < 25; ++i) {
-    newModels.append(QVariant::fromValue(ClientModel()));
-  }
-
-  emit viewChanged(newModels);
+  updateView();
 }
 
 void ClientManagementViewController::onUpdateButtonReleased(int modelIndex) {
