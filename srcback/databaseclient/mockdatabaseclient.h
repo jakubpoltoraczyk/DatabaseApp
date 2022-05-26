@@ -12,6 +12,9 @@ public:
    */
   LoginCredentials requestLogin(const std::string& login, const std::string& password) override;
 
+  /** Send a logout request */
+  void requestLogout() override;
+
   /**
    * @brief Create order using specified data model
    * @param model Data model related to order which will be created

@@ -17,6 +17,7 @@ QJsonDocument openJson(const QString& pathToJson) {
 
 DataBaseClient::LoginCredentials MockDataBaseClient::requestLogin(const std::string& login,
                                                                   const std::string& password) {
+  std::cout << __PRETTY_FUNCTION__ << std::endl;
   DataBaseClient::LoginCredentials loginCredentials = DataBaseClient::LoginCredentials::UKNOWN;
 
   if ((login == "user" && password == "user") || (login == "" && password == "")) {
@@ -26,6 +27,10 @@ DataBaseClient::LoginCredentials MockDataBaseClient::requestLogin(const std::str
   }
 
   return loginCredentials;
+}
+
+void MockDataBaseClient::requestLogout() {
+  std::cout << __PRETTY_FUNCTION__ << std::endl;
 }
 
 void MockDataBaseClient::createOrder(Models::OrderModel model) {

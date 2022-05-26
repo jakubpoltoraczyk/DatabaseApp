@@ -21,7 +21,7 @@ QtObject {
     readonly property var clientIdentitiesTextLabelArray: ["First name:", "Lase name:", "Pesel:", "Phone number:"]
 
     /** Contains text for placeholders in client identities component */
-    readonly property var clientIdentitiesPlaceHolderArray: ["Jan", "Kowalski", "15310528737", "024335668"]
+    readonly property var clientIdentitiesPlaceHolderArray: ["Jan", "Kowalski", "00220345431", "724044887"]
 
     /** Contains text for text labels in order dataset component */
     readonly property var orderDatasetTextLabelArray:
@@ -29,5 +29,5 @@ QtObject {
 
     /** Contains text for placeholders in order dataset component */
     readonly property var orderDatasetPlaceholderArray:
-        ["10221345", "A452R", "149928", "21.06.2022", "30.06.2022", "1857"]
+        ["134523", "A21I37R", "14926", "30.06.2022", "21.07.2022", "1204"]
 }

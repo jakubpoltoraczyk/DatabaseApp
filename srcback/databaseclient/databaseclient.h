@@ -17,6 +17,9 @@ public:
    */
   virtual LoginCredentials requestLogin(const std::string& login, const std::string& password) = 0;
 
+  /** Send a logout request */
+  virtual void requestLogout() = 0;
+
   /**
    * @brief Create order using specified data model
    * @param model Data model related to order which will be created

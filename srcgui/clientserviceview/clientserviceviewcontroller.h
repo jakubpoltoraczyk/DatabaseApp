@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../srcback/databaseclient/databaseclient.h"
+#include "../custommessagedialog/custommessagedialogcontroller.h"
 #include "../windowmanager/windowmanager.h"
 
 #include <QObject>
@@ -25,8 +26,10 @@ public:
    * @param newDataBaseClient DataBaseClient object to communicate with database
    * @param newWindowManager WindowManager object to control existing application windows
    */
-  ClientServiceViewController(std::shared_ptr<DataBaseClient> newDataBaseClient,
-                              std::shared_ptr<WindowManager> newWindowManager);
+  ClientServiceViewController(
+      std::shared_ptr<DataBaseClient> newDataBaseClient,
+      std::shared_ptr<WindowManager> newWindowManager,
+      std::shared_ptr<CustomMessageDialogController> newCustomMessageDialogController);
 
 public slots:
   /** Called when register button has been just released */
@@ -43,6 +46,10 @@ signals:
   void collectDataFromOrderDatasetComponent();
 
 private:
+  bool isDataIdentitiesValid();
+
+  bool isOrderDatasetValid();
+
   QString firstName;
   QString lastName;
   QString pesel;
@@ -56,4 +63,5 @@ private:
 
   std::shared_ptr<DataBaseClient> dataBaseClient;
   std::shared_ptr<WindowManager> windowManager;
+  std::shared_ptr<CustomMessageDialogController> customMessageDialogController;
 };

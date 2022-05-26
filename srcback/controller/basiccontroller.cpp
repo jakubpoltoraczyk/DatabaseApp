@@ -4,7 +4,7 @@ BasicController::BasicController(std::shared_ptr<DataBaseClient> newDataBaseClie
     : dataBaseClient(newDataBaseClient),
       customMessageDialogController(std::make_shared<CustomMessageDialogController>()),
       windowManager(std::make_shared<WindowManager>(dataBaseClient, customMessageDialogController)),
-      clientServiceViewController(dataBaseClient, windowManager),
+      clientServiceViewController(dataBaseClient, windowManager, customMessageDialogController),
       clientManagementViewController(dataBaseClient, windowManager) {}
 
 std::vector<std::pair<QString, QObject*>> BasicController::getObjectsToRegister() {

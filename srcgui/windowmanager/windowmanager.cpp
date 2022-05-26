@@ -10,7 +10,22 @@ WindowManager::WindowManager(
       customMessageDialogController(newCustomMessageDialogController) {}
 
 void WindowManager::onRegisterUserConfirmed(const QStringList& userData) {
+  if (userData[2].size() != 11 || userData[3].size() != 9) {
+    customMessageDialogController->showMessageDialog("Invalid data",
+                                                     "You've entered incorrect client data!");
+    return;
+  }
+
+  for (const auto& element : userData) {
+    if (element.size() == 0) {
+      customMessageDialogController->showMessageDialog("Invalid data",
+                                                       "You've entered incorrect client data!");
+      return;
+    }
+  }
+
   emit setClientIdentitiesWindowVisibility(false, clientIdentitiesWindowMode);
+
   auto model = Models::UserModel{
       userData.at(0).toStdString(), userData.at(1).toStdString(), userData.at(2).toStdString(),
       userData.at(3).toStdString(), userData.at(4).toStdString(), userData.at(5).toStdString(),

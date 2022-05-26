@@ -13,5 +13,5 @@ QtObject {
         ["First name:", "Last name:", "Pesel:", "Phone number:", "Mail adress:", "City:", "Postal code:", "Street:", "House number:"]
 
     readonly property var placeholderArray:
-        ["Jan", "Kowalski", "15310528737", "024335668", "jankowalski@gmail.com", "Wrocław", "60-350", "Plac Grunwaldzki", "22"]
+        ["Jan", "Kowalski", "00220345431", "724044887", "jankowalski@gmail.com", "Wrocław", "60-350", "Plac Grunwaldzki", "22"]
 }
