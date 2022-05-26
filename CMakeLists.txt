@@ -9,6 +9,7 @@ add_executable(${PROJECT_NAME}
   srcback/controller/basiccontroller.cpp
   srcback/databaseclient/mockdatabaseclient.cpp
   srcback/databaseclient/sqldatabaseclient.cpp
+  srcgui/clientmanagementview/clientmanagementviewcontroller.cpp
   srcgui/clientserviceview/clientserviceviewcontroller.cpp
   srcgui/windowmanager/windowmanager.cpp
 
@@ -16,7 +17,9 @@ add_executable(${PROJECT_NAME}
   srcback/databaseclient/databaseclient.h
   srcback/databaseclient/mockdatabaseclient.h
   srcback/databaseclient/sqldatabaseclient.h
+  srcgui/clientmanagementview/clientmanagementviewcontroller.h
   srcgui/clientserviceview/clientserviceviewcontroller.h
+  srcgui/clientmanagementview/clientmodel.h
   srcgui/windowmanager/windowmanager.h
 
   qml.qrc

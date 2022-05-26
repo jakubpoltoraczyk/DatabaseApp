@@ -17,5 +17,8 @@
         <file>srcgui/clientserviceview/OrderDataset.qml</file>
         <file>srcgui/windowmanager/ClientIdentitiesWindow.qml</file>
         <file>srcgui/configuration/ClientIdentitiesWindowConstants.qml</file>
+        <file>srcgui/clientmanagementview/ClientManagementView.qml</file>
+        <file>srcgui/clientmanagementview/Client.qml</file>
+        <file>srcgui/configuration/ClientManagementViewConstants.qml</file>
     </qresource>
 </RCC>

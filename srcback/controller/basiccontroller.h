@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../../srcgui/clientmanagementview/clientmanagementviewcontroller.h"
 #include "../../srcgui/clientserviceview/clientserviceviewcontroller.h"
 #include "../../srcgui/windowmanager/windowmanager.h"
 #include "../databaseclient/databaseclient.h"
@@ -23,9 +24,13 @@ public:
    */
   std::vector<std::pair<QString, QObject*>> getObjectsToRegister();
 
+public slots:
+  void onTabViewChanged(int index);
+
 private:
   std::shared_ptr<DataBaseClient> dataBaseClient;
   std::shared_ptr<WindowManager> windowManager;
 
   ClientServiceViewController clientServiceViewController;
+  ClientManagementViewController clientManagementViewController;
 };
