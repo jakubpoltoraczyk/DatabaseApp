@@ -40,19 +40,7 @@ void ClientManagementViewController::onDeleteButtonReleased(const QString& clien
   emit viewChanged(newModels);
 }
 
-void ClientManagementViewController::onUpdateButtonReleased(const QStringList& clientData) {
-  Models::UserModel model{clientData.at(0).toStdString(), clientData.at(1).toStdString(),
-                          clientData.at(2).toStdString(), clientData.at(3).toStdString(),
-                          clientData.at(4).toStdString(), clientData.at(5).toStdString(),
-                          clientData.at(6).toStdString(), clientData.at(7).toStdString(),
-                          clientData.at(8).toStdString()};
-
-  dataBaseClient->updateUser(std::move(model));
-
-  QVariantList newModels;
-  for (int i = 0; i < 25; ++i) {
-    newModels.append(QVariant::fromValue(ClientModel()));
-  }
-
-  emit viewChanged(newModels);
+void ClientManagementViewController::onUpdateButtonReleased() {
+  windowManager->setClientIdentitiesWindowVisibility(
+      true, WindowManager::ClientIdentitiesWindowMode::UPDATE);
 }

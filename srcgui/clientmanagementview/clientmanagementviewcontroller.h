@@ -17,9 +17,9 @@ public:
   void updateView();
 
 public slots:
-  void onDeleteButtonReleased(const QString &clientPesel);
+  void onDeleteButtonReleased(const QString& clientPesel);
 
-  void onUpdateButtonReleased(const QStringList &clientData);
+  void onUpdateButtonReleased();
 
 signals:
   void viewChanged(QVariantList newModels);

@@ -21,25 +21,10 @@ Rectangle {
     property string houseNumber: ""
 
     signal deleteClient(string clientPesel)
-    signal updateClient(var clientData)
-
-    function collectData() {
-        var clientData = []
-        clientData.push(firstName)
-        clientData.push(lastName)
-        clientData.push(pesel)
-        clientData.push(phoneNumber)
-        clientData.push(mailAdress)
-        clientData.push(city)
-        clientData.push(postalCode)
-        clientData.push(street)
-        clientData.push(houseNumber)
-        return clientData
-    }
 
     Component.onCompleted: {
         deleteClient.connect(clientManagementViewController.onDeleteButtonReleased)
-        updateClient.connect(clientManagementViewController.onUpdateButtonReleased)
+        updateButton.released.connect(clientManagementViewController.onUpdateButtonReleased)
     }
 
     Row {
@@ -80,10 +65,6 @@ Rectangle {
         CustomButton {
             id: updateButton
             text: "Update"
-
-            onReleased: {
-                updateClient(collectData())
-            }
         }
     }
 }
