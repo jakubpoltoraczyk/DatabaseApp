@@ -44,5 +44,5 @@ void MockDataBaseClient::updateClient(Models::UserModel model) {
 
 QJsonDocument MockDataBaseClient::readClients() {
   std::cout << __PRETTY_FUNCTION__ << std::endl;
-  return openJson(":/TEST/testfiles/users.json");
+  return openJson(":/TEST/testfiles/clients.json");
 }
